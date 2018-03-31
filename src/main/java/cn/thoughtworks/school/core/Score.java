@@ -1,6 +1,6 @@
 package cn.thoughtworks.school.core;
 
-public class Score {
+public class Score implements Comparable<Score> {
 
     private int score;
 
@@ -26,5 +26,10 @@ public class Score {
 
     public boolean isBigger(Score score) {
         return this.score > score.score;
+    }
+
+    @Override
+    public int compareTo(Score o) {
+        return Integer.compare(score, 0);
     }
 }
