@@ -20,14 +20,6 @@ public class Score implements Comparable<Score> {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public boolean isBigger(Score score) {
-        return this.score > score.score;
-    }
-
     @Override
     public int compareTo(Score o) {
         return Integer.compare(score, 0);
