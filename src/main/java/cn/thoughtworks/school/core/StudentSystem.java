@@ -15,6 +15,6 @@ public class StudentSystem {
     public void start() {
         List<Student> students = this.students.retrieveStudents();
         studentDomainService.retrieveTopTenStudents(students)
-                .forEach(System.out::println);
+                ;
     }
 }

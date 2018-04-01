@@ -4,7 +4,7 @@ import java.util.List;
 
 public class StudentDomainService {
 
-    public List<Student> retrieveTopTenStudents(List<Student> students) {
-        return students;
+    public void retrieveTopTenStudents(List<Student> students) {
+        students.forEach(System.out::println);
     }
 }
