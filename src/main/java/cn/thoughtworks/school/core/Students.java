@@ -5,7 +5,6 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Collections;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -15,8 +14,7 @@ public class Students {
     public List<Student> retrieveStudents() {
         try {
             Path filePath = Paths.get(ClassLoader.getSystemResource("list.txt").toURI());
-            List<Student> collect = Files.lines(filePath).map(this::parse).collect(toList());
-            return Collections.singletonList(new Student("yang", Score.valueOf(12)));
+            return Files.lines(filePath).map(this::parse).collect(toList());
         } catch (URISyntaxException | IOException e) {
             throw new RuntimeException("if you see this exception, please raise your hand");
         }
